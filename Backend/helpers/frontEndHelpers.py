@@ -9,7 +9,7 @@ class Config(BaseModel):
     threshold: float
     csa_res: int
     pzc_res: int
-    shp_res: int
+    shp_res: float
     csa_cap: int
     pzc_cap: int
     shp_cap: int

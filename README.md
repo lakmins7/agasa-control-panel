@@ -3,10 +3,10 @@ This repository is for the front-end UI and the back-end software needed to conf
 
 ## How to install in a AlmaLinux (or a related linux distribution)
 
-First install Apache, and then clone the repository, and then setup the necessary files, before finally running Uvicorn.
+First install Apache, then clone the repository, and then setup the necessary files, before finally running Uvicorn.
 
 ### Step 1: Installing Apache2
-The below steps are only needed if you don't have Apache2 in your machine. 
+The below steps are only needed if you don't have Apache2 in your machine. If you have Apache in your machine, **skip to step 2**.
 
 1. Install Apache2: `sudo dnf install httpd -y`
 2. Then run it: `sudo systemctl start httpd` and then do `sudo systemctl enable httpd`
@@ -59,7 +59,6 @@ and change lines
 
 2. Then go the Backend and create a Python virtual environment: 
 ```
-cd Backend
 python3 -m venv Venv
 source Venv/bin/activate
 ```
@@ -71,7 +70,7 @@ source Venv/bin/activate
 screen -S S1
 uvicorn main:app --host 127.0.0.1 --port 8000
 ```
-
++ To reduce the noise, and only output warnings, you can add the flag `--log-level warning` to the *uvicorn* command.
 + To leave the screen you can do `Ctrl+A` and `Ctrl+D`
 
 Now you should be able to run the WebUI and use it to configure the AGASA chips. \
